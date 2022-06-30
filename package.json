@@ -1,0 +1,62 @@
+{
+   "name": "one-rupee-supermarket-admin-panel",
+   "version": "0.1.0",
+   "private": true,
+   "dependencies": {
+      "@emotion/react": "^11.9.3",
+      "@emotion/styled": "^11.9.3",
+      "@material-ui/core": "^5.0.0-alpha.28",
+      "@material-ui/icons": "^5.0.0-alpha.28",
+      "@material-ui/styles": "^4.10.0",
+      "@mui/icons-material": "^5.8.4",
+      "@mui/material": "^5.8.5",
+      "@mui/x-data-grid": "^5.1.0",
+      "@testing-library/jest-dom": "^5.16.4",
+      "@testing-library/react": "^13.3.0",
+      "@testing-library/user-event": "^13.5.0",
+      "chart.js": "^3.5.1",
+      "formik": "^2.2.9",
+      "history": "^5.0.0",
+      "moment": "^2.29.3",
+      "nprogress": "^0.2.0",
+      "prop-types": "^15.7.2",
+      "react": "^18.1.0",
+      "react-chartjs-2": "^3.0.4",
+      "react-dom": "^18.1.0",
+      "react-feather": "^2.0.8",
+      "react-helmet": "^6.1.0",
+      "react-perfect-scrollbar": "^1.5.8",
+      "react-router": "^6.0.0-beta.0",
+      "react-router-dom": "^6.0.0-beta.0",
+      "uuid": "^8.3.0",
+      "web-vitals": "^2.1.4",
+      "yup": "^0.32.11"
+   },
+   "devDependencies": {
+      "react-scripts": "^5.0.1"
+   },
+   "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+   },
+   "eslintConfig": {
+      "extends": [
+         "react-app",
+         "react-app/jest"
+      ]
+   },
+   "browserslist": {
+      "production": [
+         ">0.2%",
+         "not dead",
+         "not op_mini all"
+      ],
+      "development": [
+         "last 1 chrome version",
+         "last 1 firefox version",
+         "last 1 safari version"
+      ]
+   }
+}
