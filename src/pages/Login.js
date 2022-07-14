@@ -35,7 +35,7 @@ const Login = () => {
 
   const loginServices = new LoginServices();
 
-  
+
   const getEmailValue = (event)=>{
     const userValue=  event.target.value;
     setData({
@@ -68,23 +68,36 @@ const loginHandle = () => {
       var code = json.StatusCode;
       if(code == 200){
           console.log('ok')
-          console.log('id :',json.user_id)
+          console.log('id :',json.user_nic)
           console.log('token :',json.Token)
-          console.log('token :',json.user_type)
-          // signIn(json.user_id, json.Token,json.user_name,json.user_email);
+          console.log('Type :',json.user_type)
+          console.log('Name :',json.user_name)
+          console.log('Name :',json.area)
+          sessionStorage.setItem('token', json.Token)
+          sessionStorage.setItem('fullName', json.user_name)
+          sessionStorage.setItem('userType', json.user_type)
+          sessionStorage.setItem('id', json.user_nic)
+          sessionStorage.setItem('authStatus', 'true')
+          sessionStorage.setItem('area', json.area)
+
+          if (json.user_type === 'ADMIN') {
+              navigate('/admin/dashboard', {replace: true});
+          } else {
+              navigate('/seller/dashboard', {replace: true});
+          }
 
       }else{
         setAlertContent(json.massage);
         setAlert(true);
       }
-      
+
     });
 }
 
   return (
     <>
       <Helmet>
-        <title>Login | Material Kit</title>
+        <title>Happy Gas Login</title>
       </Helmet>
       {alert ? <Alert
       variant="outlined" severity="error"
@@ -127,7 +140,7 @@ const loginHandle = () => {
             //   navigate('/admin/dashboard', { replace: true });
             // }}
 
-            
+
           >
             {({
               errors,
@@ -162,7 +175,7 @@ const loginHandle = () => {
                     <Button
                       style={{
                         color: "white",
-                        
+
                     }}
                       fullWidth
                       startIcon={<FacebookIcon />}
@@ -206,7 +219,7 @@ const loginHandle = () => {
                 <TextField
                    sx={{
                     "& .MuiInputLabel-root": {color: 'Black'},//styles the label
-                    
+
                   }}
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
@@ -222,7 +235,7 @@ const loginHandle = () => {
                 <TextField
                  sx={{
                   "& .MuiInputLabel-root": {color: 'Black'},//styles the label
-                  
+
                 }}
                   error={Boolean(touched.password && errors.password)}
                   fullWidth

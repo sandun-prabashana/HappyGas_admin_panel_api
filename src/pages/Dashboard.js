@@ -1,22 +1,29 @@
 /*eslint-disable*/
+
 import { Helmet } from "react-helmet";
 import { Box, Container, Grid } from "@material-ui/core";
-import TodayJobs from "../components/dashboard/TodayJobs";
+import TodayOrders from "../components/dashboard/TodayOrders";
 // import LatestOrders from "../components/dashboard/LatestOrders";
 import Sales from "../components/dashboard/Sales";
-import PendingJobs from "../components/dashboard/PendingJobs";
-import CompletedJobs from "../components/dashboard/CompletedJobs";
+import PendingOrders from "../components/dashboard/PendingOrders";
+import CompletedOrders from "../components/dashboard/CompletedOrders";
 import TotalProfit from "../components/dashboard/TotalProfit";
 import JobStatusChart from "../components/dashboard/JobStatusChart";
 
 import React, { useState, useEffect } from "react";
+import axios from 'axios'
 
-export default function Dashboard() {
+
+const api = axios.create({
+})
+
+function Dashboard() {
+
    const [dashboard, setDashboard] = useState({
-      totalIncome: "2320000",
-      pendingJobPercentage: "50",
-      ongoingJobs: 23000,
-      completedJobs: 123123,
+      totalIncome: "",
+      pendingJobPercentage: "",
+      Orders: '',
+      CompletedOrders: '',
       totalJobs: 0,
       allocatedJobs: 0,
       notAllocatedJobs: 0,
@@ -31,8 +38,31 @@ export default function Dashboard() {
    //    }, []);
    //    console.log(dashboard);
 
+   useEffect(() => {
+      api.get("http://127.0.0.1:5000/api/v1/adminRoute/getAllproductStatus")
+          .then(res => {
+             console.log(res.data.order.orderCount)
+              let tot = res.data.order.orderCount
+              let com = res.data.complete.completeOrder
+
+
+              setDashboard({
+                  ...dashboard,
+                  Orders: res.data.order.orderCount,
+                  CompletedOrders:res.data.complete.completeOrder,
+                  pendingJobPercentage:(com/tot)*100,
+                  totalIncome:res.data.complete.completeOrder*5000
+
+              });
+          })
+          .catch(error=>{
+             console.log("Error")
+          })
+   }, [])
+
    return (
       <>
+
          <Helmet>
             <title>Dashboard | Material Kit</title>
          </Helmet>
@@ -46,14 +76,14 @@ export default function Dashboard() {
             <Container maxWidth={false}>
                <Grid container spacing={3}>
                   <Grid item lg={3} sm={6} xl={3} xs={12}>
-                     <TodayJobs ongoingJobs={dashboard.ongoingJobs} />
+                     <TodayOrders ongoingJobs={dashboard.Orders} />
                   </Grid>
                   <Grid item lg={3} sm={6} xl={3} xs={12}>
-                     <CompletedJobs completedJobs={dashboard.completedJobs} />
+                     <CompletedOrders CompletedOrders={dashboard.CompletedOrders} />
                   </Grid>
                   <Grid item lg={3} sm={6} xl={3} xs={12}>
-                     <PendingJobs
-                        pendingJobPercentage={dashboard.pendingJobPercentage}
+                     <PendingOrders
+                         pendingOrderPercentage={dashboard.pendingJobPercentage}
                      />
                   </Grid>
                   <Grid item lg={3} sm={6} xl={3} xs={12}>
@@ -82,3 +112,4 @@ export default function Dashboard() {
       </>
    );
 }
+export default Dashboard;

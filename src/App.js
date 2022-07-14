@@ -19,5 +19,7 @@ function App() {
 export default App;
 
 function getAuthState() {
-   return true;
+   let authStatus = sessionStorage.getItem('authStatus')
+   let userType = sessionStorage.getItem('userType')
+   return {authStatus: authStatus === 'true', userType: userType};
 }

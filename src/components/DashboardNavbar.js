@@ -47,5 +47,7 @@ DashboardNavbar.propTypes = {
 export default DashboardNavbar;
 
 function logout() {
-   alert("something went wrong, Please contact admin");
+   sessionStorage.clear()
+   window.location.reload(false);
+
 }

@@ -34,14 +34,14 @@ const DashboardLayoutContent = styled("div")({
    overflow: "auto",
 });
 
-const DashboardLayout = () => {
+const DashboardLayout = ({userType}) => {
    const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
    return (
       <DashboardLayoutRoot>
-         <p>asd</p>
          <DashboardNavbar onMobileNavOpen={() => setMobileNavOpen(true)} />
          <DashboardSidebar
+                userType={userType}
             onMobileClose={() => setMobileNavOpen(false)}
             openMobile={isMobileNavOpen}
          />

@@ -10,7 +10,7 @@ import {
 import { orange } from "@material-ui/core/colors";
 import InsertChartIcon from "@material-ui/icons/InsertChartOutlined";
 
-const PendingJobs = ({ pendingJobPercentage, ...props }) => (
+const PendingOrders = ({ pendingOrderPercentage, ...props }) => (
    <Card sx={{ height: "100%" }} {...props}>
       <CardContent>
          <Grid container spacing={3} sx={{ justifyContent: "space-between" }}>
@@ -19,7 +19,7 @@ const PendingJobs = ({ pendingJobPercentage, ...props }) => (
                   Order On Progress
                </Typography>
                <Typography color="textPrimary" variant="h3">
-                  {pendingJobPercentage ? pendingJobPercentage : "0.00"}%
+                  {pendingOrderPercentage ? pendingOrderPercentage : "0.00"}%
                </Typography>
             </Grid>
             <Grid item>
@@ -36,7 +36,7 @@ const PendingJobs = ({ pendingJobPercentage, ...props }) => (
          </Grid>
          <Box sx={{ pt: 3 }}>
             <LinearProgress
-               value={parseFloat(pendingJobPercentage)}
+               value={parseFloat(pendingOrderPercentage)}
                variant="determinate"
             />
          </Box>
@@ -44,4 +44,4 @@ const PendingJobs = ({ pendingJobPercentage, ...props }) => (
    </Card>
 );
 
-export default PendingJobs;
+export default PendingOrders;

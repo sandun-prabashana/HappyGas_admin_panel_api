@@ -6,11 +6,10 @@ import {
   Grid,
   Typography
 } from '@material-ui/core';
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import MoneyIcon from '@material-ui/icons/Money';
 import { red } from '@material-ui/core/colors';
 
-const TodayJobs = ({ongoingJobs,...props}) => (
+const TodayOrders = ({ongoingJobs,...props}) => (
   <Card
     sx={{ height: '100%' }}
     {...props}
@@ -27,7 +26,7 @@ const TodayJobs = ({ongoingJobs,...props}) => (
             gutterBottom
             variant="h6"
           >
-            Today Orders
+            All Orders
           </Typography>
           <Typography
             color="textPrimary"
@@ -48,32 +47,9 @@ const TodayJobs = ({ongoingJobs,...props}) => (
           </Avatar>
         </Grid>
       </Grid>
-      {/*<Box*/}
-      {/*  sx={{*/}
-      {/*    pt: 2,*/}
-      {/*    display: 'flex',*/}
-      {/*    alignItems: 'center'*/}
-      {/*  }}*/}
-      {/*>*/}
-      {/*  <ArrowDownwardIcon sx={{ color: red[900] }} />*/}
-      {/*  <Typography*/}
-      {/*    sx={{*/}
-      {/*      color: red[900],*/}
-      {/*      mr: 1*/}
-      {/*    }}*/}
-      {/*    variant="body2"*/}
-      {/*  >*/}
-      {/*    12%*/}
-      {/*  </Typography>*/}
-      {/*  <Typography*/}
-      {/*    color="textSecondary"*/}
-      {/*    variant="caption"*/}
-      {/*  >*/}
-      {/*    Since last month*/}
-      {/*  </Typography>*/}
-      {/*</Box>*/}
+
     </CardContent>
   </Card>
 );
 
-export default TodayJobs;
+export default TodayOrders;
