@@ -30,7 +30,7 @@ function ProductLayout() {
 
 
     useEffect(() => {
-        api.get("http://127.0.0.1:5000/api/v1/adminRoute/getAllproduct")
+        api.get("https://happygas.herokuapp.com/api/v1/adminRoute/getAllproduct")
             .then(res => {
                 console.log(res.data)
                 setData(res.data)

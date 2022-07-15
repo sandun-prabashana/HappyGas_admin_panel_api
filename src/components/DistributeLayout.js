@@ -27,7 +27,7 @@ const DistributeLayout = () => {
 
 
     useEffect(() => {
-        api.get("http://127.0.0.1:5000/api/v1/adminRoute/getAllQty")
+        api.get("https://happygas.herokuapp.com/api/v1/adminRoute/getAllQty")
             .then(res => {
                 setData({
                     ...data,
@@ -40,7 +40,7 @@ const DistributeLayout = () => {
     }, [])
 
     const loadQty = () => {
-        api.get("http://127.0.0.1:5000/api/v1/adminRoute/getAllQty")
+        api.get("https://happygas.herokuapp.com/api/v1/adminRoute/getAllQty")
             .then(res => {
                 setData({
                     ...data,

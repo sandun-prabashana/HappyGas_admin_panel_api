@@ -64,7 +64,7 @@ export default function  PickUpOrdersLayout() {
     }
 
     const loadTable = () => {
-        api.post("http://127.0.0.1:5000/api/v1/adminRoute/getAllPickUpOrders",{
+        api.post("https://happygas.herokuapp.com/api/v1/adminRoute/getAllPickUpOrders",{
                 city:sessionStorage.getItem('area')
             },
             {
@@ -85,7 +85,7 @@ export default function  PickUpOrdersLayout() {
             })
     }
     useEffect(() => {
-        api.post("http://127.0.0.1:5000/api/v1/adminRoute/getAllPickUpOrders",{
+        api.post("https://happygas.herokuapp.com/api/v1/adminRoute/getAllPickUpOrders",{
 
         },
             {

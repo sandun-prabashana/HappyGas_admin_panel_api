@@ -35,7 +35,7 @@ function Dashboard2() {
 
 
     useEffect(() => {
-        api.post("http://127.0.0.1:5000/api/v1/adminRoute/getAllOrderDetailForSeller",{
+        api.post("https://happygas.herokuapp.com/api/v1/adminRoute/getAllOrderDetailForSeller",{
 
             },
             {

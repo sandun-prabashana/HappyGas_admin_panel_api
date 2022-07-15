@@ -39,7 +39,7 @@ function Dashboard() {
    //    console.log(dashboard);
 
    useEffect(() => {
-      api.get("http://127.0.0.1:5000/api/v1/adminRoute/getAllproductStatus")
+      api.get("https://happygas.herokuapp.com/api/v1/adminRoute/getAllproductStatus")
           .then(res => {
              console.log(res.data.order.orderCount)
               let tot = res.data.order.orderCount

@@ -41,7 +41,7 @@ function SellerLayout() {
 
 
     useEffect(() => {
-        api.get("http://127.0.0.1:5000/api/v1/adminRoute/getAllSellers")
+        api.get("https://happygas.herokuapp.com/api/v1/adminRoute/getAllSellers")
             .then(res => {
                 console.log(res.data)
                 setData(res.data)
@@ -87,7 +87,7 @@ function SellerLayout() {
 
 
     const loadTable = () =>{
-        api.get("http://127.0.0.1:5000/api/v1/adminRoute/getAllSellers")
+        api.get("https://happygas.herokuapp.com/api/v1/adminRoute/getAllSellers")
             .then(res => {
                 console.log(res.data)
                 setData(res.data)

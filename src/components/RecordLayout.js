@@ -30,7 +30,7 @@ function RecordLayout() {
 
 
     useEffect(() => {
-        api.get("http://127.0.0.1:5000/api/v1/adminRoute/getAllRecord")
+        api.get("https://happygas.herokuapp.com/api/v1/adminRoute/getAllRecord")
             .then(res => {
                 console.log(res.data)
                 setData(res.data)

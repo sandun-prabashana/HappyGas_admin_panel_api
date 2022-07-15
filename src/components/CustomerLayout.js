@@ -30,7 +30,7 @@ function CustomerLayout() {
 
 
     useEffect(() => {
-        api.get("http://127.0.0.1:5000/api/v1/adminRoute/getAllUsers")
+        api.get("https://happygas.herokuapp.com/api/v1/adminRoute/getAllUsers")
             .then(res => {
                 console.log(res.data)
 

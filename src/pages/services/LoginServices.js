@@ -1,6 +1,6 @@
 export default class LoginServices{
 
-    baseUrl = 'http://127.0.0.1:5000';
+    baseUrl = 'https://happygas.herokuapp.com';
 
 
     async signIn(email, password) {

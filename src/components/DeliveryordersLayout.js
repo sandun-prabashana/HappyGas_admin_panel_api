@@ -66,7 +66,7 @@ function DeliveryordersLayout() {
     }
 
     const loadTable = () => {
-        api.post("http://127.0.0.1:5000/api/v1/adminRoute/getAllDeliveryOrders",{
+        api.post("https://happygas.herokuapp.com/api/v1/adminRoute/getAllDeliveryOrders",{
                 city:sessionStorage.getItem('area')
             },
             {
@@ -88,7 +88,7 @@ function DeliveryordersLayout() {
     }
 
     useEffect(() => {
-        api.post("http://127.0.0.1:5000/api/v1/adminRoute/getAllDeliveryOrders",{
+        api.post("https://happygas.herokuapp.com/api/v1/adminRoute/getAllDeliveryOrders",{
                 city:sessionStorage.getItem('area')
             },
             {
